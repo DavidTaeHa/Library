@@ -41,7 +41,7 @@ public class Book {
     @Override
     public String toString() {
         String availability;
-        if (checkedOut == true) {
+        if (checkedOut == false) {
             availability = "is available";
         } else {
             availability = "is checked out";

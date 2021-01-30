@@ -43,6 +43,7 @@ public class Library {
      * @return
      */
     public boolean remove(Book book) {
+        return true;
     }
 
     /** Book is checked out from the library and is no longer available
