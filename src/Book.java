@@ -1,7 +1,7 @@
 /**
  * This class represents a book in a library
- * @author David Ha, Andrew McAvoy
  *
+ * @author David Ha, Andrew McAvoy
  */
 public class Book {
     private String number; //a 5-digit serial number unique to the book
@@ -10,7 +10,7 @@ public class Book {
     private Date datePublished;
 
 
-    public Book(String number, String name, Date datePublished){
+    public Book(String number, String name, Date datePublished) {
         this.number = number;
         this.name = name;
         this.checkedOut = false;
@@ -19,13 +19,14 @@ public class Book {
 
     /**
      * Compares two books to see if they are equal
+     *
      * @param obj represents another book to compare
      * @return boolean value true if the serial numbers for two books are the same
      */
     @Override
-    public boolean equals(Object obj){
+    public boolean equals(Object obj) {
         Book temp = (Book) obj;
-        if(number == temp.number){
+        if (number == temp.number) {
             return true;
         }
         return false;
@@ -34,15 +35,15 @@ public class Book {
     /**
      * Prints out a textual representation of a book in this format:
      * Book Number::Book Name::Date Published::Availability.
+     *
      * @return text representation of book
      */
     @Override
     public String toString() {
         String availability;
-        if(checkedOut == true){
+        if (checkedOut == true) {
             availability = "is available";
-        }
-        else{
+        } else {
             availability = "is checked out";
         }
         return "Book#" + number + "::" + name + "::" + datePublished + "::" + availability;

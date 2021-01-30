@@ -61,27 +61,24 @@ public class Date {
         if ((year < 1900) || (year > currentYear)) {
             return false;
         }
-        if((month < JANUARY)|| (month > DECEMBER)){
+        if ((month < JANUARY) || (month > DECEMBER)) {
             return false;
         }
-        if((month == JANUARY) || (month == MARCH) || (month == MAY) ||
-                (month == JULY) || (month == AUGUST) || (month == OCTOBER) ||(month == DECEMBER)){
-            if ((day < 0) || (day > 31)){
+        if ((month == JANUARY) || (month == MARCH) || (month == MAY) ||
+                (month == JULY) || (month == AUGUST) || (month == OCTOBER) || (month == DECEMBER)) {
+            if ((day < 0) || (day > 31)) {
                 return false;
             }
-        }
-        else if((month == APRIL) || (month == JUNE) || (month == SEPTEMBER) || (month == NOVEMBER)){
-            if((day < 0) || (day > 30)){
+        } else if ((month == APRIL) || (month == JUNE) || (month == SEPTEMBER) || (month == NOVEMBER)) {
+            if ((day < 0) || (day > 30)) {
                 return false;
             }
-        }
-        else{
-            if(isLeapYear(year)){
-                if ((day < 0) || (day > 29)){
+        } else {
+            if (isLeapYear(year)) {
+                if ((day < 0) || (day > 29)) {
                     return false;
                 }
-            }
-            else if((day < 0) || (day > 28)){ //Assumes isLeapYear has returned false
+            } else if ((day < 0) || (day > 28)) { //Assumes isLeapYear has returned false
                 return false;
             }
         }
@@ -96,12 +93,11 @@ public class Date {
      */
     private static boolean isLeapYear(int year) {
         if (year % 4 == 0) {
-            if (year % 100 == 0){
-                if(year % 400 == 0){
+            if (year % 100 == 0) {
+                if (year % 400 == 0) {
                     return true;
                 }
-            }
-            else{
+            } else {
                 return true;
             }
         }
@@ -110,21 +106,20 @@ public class Date {
 
     /**
      * Turns date into a String in the following format mm/dd/yyyy
+     *
      * @return date in String form
      */
     @Override
-    public String toString(){
+    public String toString() {
         String dateToString = "";
-        if(month < 10){ //adds zero in front of month if less than 10
+        if (month < 10) { //adds zero in front of month if less than 10
             dateToString += "0" + month + "/";
-        }
-        else{
+        } else {
             dateToString += month + "/";
         }
-        if(day < 10){//adds zero in front of day if less than 10
+        if (day < 10) {//adds zero in front of day if less than 10
             dateToString += "0" + day + "/";
-        }
-        else{
+        } else {
             dateToString += day + "/";
         }
         return dateToString + year;
@@ -132,7 +127,6 @@ public class Date {
 
     /**
      * This method is used as testbed method for the Date class
-     *
      */
     public static void main(String[] args) {
         Date test = new Date();
