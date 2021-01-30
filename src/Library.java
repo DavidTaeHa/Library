@@ -11,13 +11,13 @@ public class Library {
      * Default constructor for Library class
      */
     public Library() {
-    } 
+    }
 
     /**
      * Helper method used to help find a book within the library
      *
      * @param book book to be found within the library
-     * @return
+     * @return index number of the book
      */
     private int find(Book book) {
     }
