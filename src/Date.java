@@ -109,13 +109,38 @@ public class Date {
     }
 
     /**
+     * Turns date into a String in the following format mm/dd/yyyy
+     * @return date in String form
+     */
+    @Override
+    public String toString(){
+        String dateToString = "";
+        if(month < 10){ //adds zero in front of month if less than 10
+            dateToString += "0" + month + "/";
+        }
+        else{
+            dateToString += month + "/";
+        }
+        if(day < 10){//adds zero in front of day if less than 10
+            dateToString += "0" + day + "/";
+        }
+        else{
+            dateToString += day + "/";
+        }
+        return dateToString + year;
+    }
+
+    /**
      * This method is used as testbed method for the Date class
      *
      */
     public static void main(String[] args) {
         Date test = new Date();
+        Date test2 = new Date("02/03/1984");
         System.out.println(test.month);
         System.out.println(test.day);
         System.out.println(test.year);
+        System.out.println(test);
+        System.out.println(test2);
     }
 }

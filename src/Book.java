@@ -9,6 +9,14 @@ public class Book {
     private boolean checkedOut;
     private Date datePublished;
 
+
+    public Book(String number, String name, Date datePublished){
+        this.number = number;
+        this.name = name;
+        this.checkedOut = false;
+        this.datePublished = datePublished;
+    }
+
     /**
      * Compares two books to see if they are equal
      * @param obj represents another book to compare
@@ -16,7 +24,7 @@ public class Book {
      */
     @Override
     public boolean equals(Object obj){
-
+        return true;
     }
 
     /**
@@ -26,6 +34,13 @@ public class Book {
      */
     @Override
     public String toString() {
-
+        String availability;
+        if(checkedOut == true){
+            availability = "is available";
+        }
+        else{
+            availability = "is checked out";
+        }
+        return "Book#" + number + "::" + name + "::" + datePublished + "::" + availability;
     }
 }
