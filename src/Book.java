@@ -24,7 +24,11 @@ public class Book {
      */
     @Override
     public boolean equals(Object obj){
-        
+        Book temp = (Book) obj;
+        if(number == temp.number){
+            return true;
+        }
+        return false;
     }
 
     /**
