@@ -11,7 +11,7 @@ public class Book {
 
     /**
      * Compares two books to see if they are equal
-     * @param obj which represents another book to compare
+     * @param obj represents another book to compare
      * @return boolean value true if the serial numbers for two books are the same
      */
     @Override
