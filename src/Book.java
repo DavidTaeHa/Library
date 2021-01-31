@@ -43,7 +43,7 @@ public class Book {
      *
      */
     public int getNumber(){
-
+        return Integer.parseInt(number);
     }
 
     /**
