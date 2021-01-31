@@ -34,6 +34,11 @@ public class Library {
      * Helper method used to grow capacity of library by 4
      */
     private void grow() {
+        Book[] temp = new Book[books.length + 4];
+        for(int i = 0; i < books.length; i++){
+            temp[i] = books[i];
+        }
+        books = temp;
     }
 
     /**
