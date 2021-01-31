@@ -55,8 +55,6 @@ public class Date {
     public boolean isValid() {
         Calendar calendar = Calendar.getInstance();
         int currentYear = calendar.get(Calendar.YEAR);
-        int currentMonth = calendar.get(Calendar.MONTH);
-        int currentDay = calendar.get(Calendar.DATE);
 
         if ((year < 1900) || (year > currentYear)) {
             return false;
