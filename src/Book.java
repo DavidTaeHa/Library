@@ -10,6 +10,12 @@ public class Book {
     private Date datePublished;
 
 
+    /**
+     * Constructor for Book
+     * @param number Serial number of book
+     * @param name Name of the book
+     * @param datePublished Publishing date of book
+     */
     public Book(String number, String name, Date datePublished) {
         this.number = number;
         this.name = name;
@@ -30,6 +36,14 @@ public class Book {
             return true;
         }
         return false;
+    }
+
+    /**
+     * Getter method for book serial number
+     *
+     */
+    public int getNumber(){
+
     }
 
     /**

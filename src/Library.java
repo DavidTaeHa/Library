@@ -11,6 +11,8 @@ public class Library {
      * Default constructor for Library class
      */
     public Library() {
+        books = new Book[0];
+        numBooks = 0;
     }
 
     /**
@@ -20,6 +22,12 @@ public class Library {
      * @return index number of the book
      */
     private int find(Book book) {
+        for(int i = 0; i < books.length; i++){
+            if(books[i].equals(book)){
+                return books[i].getNumber();
+            }
+        }
+        return -1;//Book is not within library
     }
 
     /**
