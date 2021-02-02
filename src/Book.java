@@ -48,6 +48,13 @@ public class Book {
     }
 
     /**
+     * Setter method for checkedOut variable
+     */
+    public void setCheckedOut(boolean input){
+        checkedOut = input;
+    }
+
+    /**
      * Prints out a textual representation of a book in this format:
      * Book Number::Book Name::Date Published::Availability.
      *

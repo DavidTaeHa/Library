@@ -79,6 +79,14 @@ public class Library {
      * @return boolean value for whether or not book was found in the library
      */
     public boolean remove(Book book) {
+        for(int i = 0; i < books.length; i++){
+            if(books[i].equals(book)){
+                books[i] = null;
+                //May have to add method to shift values to the left of the array
+                return true;
+            }
+        }
+        return false;
     }
 
     /** Book is checked out from the library and is no longer available
@@ -87,6 +95,13 @@ public class Library {
      * @return boolean value for whether or not book was found in the library
      */
     public boolean checkOut(Book book) {
+        for(int i = 0; i < books.length; i++){
+            if(books[i].equals(book)){
+                books[i].setCheckedOut(true);
+                return true;
+            }
+        }
+        return false;
     }
 
     /**
@@ -96,6 +111,13 @@ public class Library {
      * @return boolean value for whether or not book was found in the library
      */
     public boolean returns(Book book) {
+        for(int i = 0; i < books.length; i++){
+            if(books[i].equals(book)){
+                books[i].setCheckedOut(false);
+                return true;
+            }
+        }
+        return false;
     }
 
     /**
