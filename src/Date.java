@@ -25,6 +25,10 @@ public class Date {
     final int NOVEMBER = 11;
     final int DECEMBER = 12;
     final int YEAR_LOWER_LIMIT = 1900;
+    final int THIRTY_DAY_MONTH = 30;
+    final int THIRTYONE_DAY_MONTH = 31;
+    final int FEB_NONLEAPYEAR = 28;
+    final int FEB_LEAPYEAR = 29;
     public static final int QUADRENNIAL = 4;
     public static final int CENTENNIAL = 100;
     public static final int QUARTERCENTENNIAL = 400;
@@ -68,19 +72,19 @@ public class Date {
         }
         if ((month == JANUARY) || (month == MARCH) || (month == MAY) ||
                 (month == JULY) || (month == AUGUST) || (month == OCTOBER) || (month == DECEMBER)) {
-            if ((day < 0) || (day > 31)) {
+            if ((day < 0) || (day > THIRTYONE_DAY_MONTH)) {
                 return false;
             }
         } else if ((month == APRIL) || (month == JUNE) || (month == SEPTEMBER) || (month == NOVEMBER)) {
-            if ((day < 0) || (day > 30)) {
+            if ((day < 0) || (day > THIRTY_DAY_MONTH)) {
                 return false;
             }
         } else {
             if (isLeapYear(year)) {
-                if ((day < 0) || (day > 29)) {
+                if ((day < 0) || (day > FEB_LEAPYEAR)) {
                     return false;
                 }
-            } else if ((day < 0) || (day > 28)) { //Assumes isLeapYear has returned false
+            } else if ((day < 0) || (day > FEB_NONLEAPYEAR)) { //Assumes isLeapYear has returned false
                 return false;
             }
         }
