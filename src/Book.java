@@ -12,8 +12,9 @@ public class Book {
 
     /**
      * Constructor for Book
-     * @param number Serial number of book
-     * @param name Name of the book
+     *
+     * @param number        Serial number of book
+     * @param name          Name of the book
      * @param datePublished Publishing date of book
      */
     public Book(String number, String name, Date datePublished) {
@@ -31,18 +32,17 @@ public class Book {
      */
     @Override
     public boolean equals(Object obj) {
-        Book temp = (Book) obj;
-        if (number == temp.number) {
-            return true;
+        if (obj instanceof Book) {
+            Book temp = (Book) obj;
+            return (number == temp.number);
         }
         return false;
     }
 
     /**
      * Getter method for book serial number
-     *
      */
-    public int getNumber(){
+    public int getNumber() {
         return Integer.parseInt(number);
     }
 
