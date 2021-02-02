@@ -25,6 +25,9 @@ public class Date {
     final int NOVEMBER = 11;
     final int DECEMBER = 12;
     final int YEAR_LOWER_LIMIT = 1900;
+    public static final int QUADRENNIAL = 4;
+    public static final int CENTENNIAL = 100;
+    public static final int QUARTERCENTENNIAL = 400;
 
     /**
      * Constructor for the date
@@ -91,9 +94,9 @@ public class Date {
      * @return boolean value True if year is a leap year
      */
     private static boolean isLeapYear(int year) {
-        if (year % 4 == 0) {
-            if (year % 100 == 0) {
-                if (year % 400 == 0) {
+        if (year % QUADRENNIAL == 0) {
+            if (year % CENTENNIAL == 0) {
+                if (year % QUARTERCENTENNIAL == 0) {
                     return true;
                 }
             } else {

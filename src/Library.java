@@ -7,6 +7,8 @@ public class Library {
     private Book[] books; // array-based implementation of the bag data structure
     private int numBooks; // the number of books currently in the bag
 
+    final int LIBRARY_INCREMENT_VALUE = 4;
+
     /**
      * Default constructor for Library class
      */
@@ -34,7 +36,7 @@ public class Library {
      * Helper method used to grow capacity of library by 4
      */
     private void grow() {
-        Book[] temp = new Book[books.length + 4];
+        Book[] temp = new Book[books.length + LIBRARY_INCREMENT_VALUE];
         for(int i = 0; i < books.length; i++){
             temp[i] = books[i];
         }
