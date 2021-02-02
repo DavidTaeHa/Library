@@ -8,6 +8,7 @@ public class Library {
     private int numBooks; // the number of books currently in the bag
 
     final int LIBRARY_INCREMENT_VALUE = 4;
+    final int INVALID = -1;
 
     /**
      * Default constructor for Library class
@@ -29,7 +30,7 @@ public class Library {
                 return books[i].getNumber();
             }
         }
-        return -1;//Book is not within library
+        return INVALID;//Book is not within library
     }
 
     /**
@@ -44,18 +45,38 @@ public class Library {
     }
 
     /**
+     * Helper method used to determine if the bag is full
+     */
+    private boolean isFull(){
+        for(int i = 0; i < books.length; i++){
+            if(books[i] == null){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
      * Method used to add book to library
      *
      * @param book book to be added to library
      */
     public void add(Book book) {
+        if(isFull()){
+            grow();
+        }
+        for(int i = 0; i < books.length; i++){
+            if(books[i] == null){
+                books[i] = book;
+            }
+        }
     }
 
     /**
      * Removes book from library
      *
      * @param book book to be removed from library
-     * @return
+     * @return boolean value for whether or not book was found in the library
      */
     public boolean remove(Book book) {
     }
@@ -63,7 +84,7 @@ public class Library {
     /** Book is checked out from the library and is no longer available
      *
      * @param book book to be checked out from library
-     * @return
+     * @return boolean value for whether or not book was found in the library
      */
     public boolean checkOut(Book book) {
     }
@@ -72,7 +93,7 @@ public class Library {
      * Book is returned to the library and available again
      *
      * @param book book to be returned to the library
-     * @return
+     * @return boolean value for whether or not book was found in the library
      */
     public boolean returns(Book book) {
     }

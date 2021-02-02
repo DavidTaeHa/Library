@@ -9,6 +9,7 @@ public class Book {
     private boolean checkedOut;
     private Date datePublished;
 
+    private static int numberTrack = 10001;//static variable to aid in numbering books
 
     /**
      * Constructor for Book
