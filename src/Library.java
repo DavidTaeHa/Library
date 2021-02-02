@@ -25,9 +25,9 @@ public class Library {
      * @return index number of the book
      */
     private int find(Book book) {
-        for(int i = 0; i < books.length; i++){
-            if(books[i].equals(book)){
-                return books[i].getNumber();
+        for (int index = 0; index < books.length; index++) {
+            if (books[index].equals(book)) {
+                return index;
             }
         }
         return INVALID;//Book is not within library
@@ -48,8 +48,8 @@ public class Library {
      * Helper method used to determine if the bag is full
      */
     private boolean isFull(){
-        for(int i = 0; i < books.length; i++){
-            if(books[i] == null){
+        for (Book book : books) {
+            if (book == null) {
                 return false;
             }
         }
@@ -68,6 +68,7 @@ public class Library {
         for(int i = 0; i < books.length; i++){
             if(books[i] == null){
                 books[i] = book;
+                numBooks++;
             }
         }
     }
@@ -79,14 +80,7 @@ public class Library {
      * @return boolean value for whether or not book was found in the library
      */
     public boolean remove(Book book) {
-        for(int i = 0; i < books.length; i++){
-            if(books[i].equals(book)){
-                books[i] = null;
-                //May have to add method to shift values to the left of the array
-                return true;
-            }
-        }
-        return false;
+
     }
 
     /** Book is checked out from the library and is no longer available
@@ -95,13 +89,7 @@ public class Library {
      * @return boolean value for whether or not book was found in the library
      */
     public boolean checkOut(Book book) {
-        for(int i = 0; i < books.length; i++){
-            if(books[i].equals(book)){
-                books[i].setCheckedOut(true);
-                return true;
-            }
-        }
-        return false;
+
     }
 
     /**
@@ -111,25 +99,28 @@ public class Library {
      * @return boolean value for whether or not book was found in the library
      */
     public boolean returns(Book book) {
-        for(int i = 0; i < books.length; i++){
-            if(books[i].equals(book)){
-                books[i].setCheckedOut(false);
-                return true;
-            }
-        }
-        return false;
+        
     }
 
     /**
      * Prints list of books in the library
      */
     public void print() {
+        for(Book book: books){
+            System.out.println(book);
+        }
     }
 
     /**
      * Print list of books by date published in ascending order
      */
     public void printByDate() {
+        int min;
+        for(int i = 0; i < books.length; i++){
+            for(int j = 0; j < books.length; j++){
+
+            }
+        }
     }
 
     /**

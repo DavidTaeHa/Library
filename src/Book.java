@@ -41,13 +41,6 @@ public class Book {
     }
 
     /**
-     * Getter method for book serial number
-     */
-    public int getNumber() {
-        return Integer.parseInt(number);
-    }
-
-    /**
      * Setter method for checkedOut variable
      */
     public void setCheckedOut(boolean input){
