@@ -12,6 +12,7 @@ public class Date {
     private int month;
     private int day;
 
+    //Constants created for the months of the year
     final int JANUARY = 1;
     final int FEBRUARY = 2;
     final int MARCH = 3;
