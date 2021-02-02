@@ -7,12 +7,14 @@ public class Library {
     private Book[] books; // array-based implementation of the bag data structure
     private int numBooks; // the number of books currently in the bag
 
+    final int EMPTY = 0;
+
     /**
      * Default constructor for Library class
      */
     public Library() {
-        books = new Book[0];
-        numBooks = 0;
+        books = new Book[EMPTY];
+        numBooks = EMPTY;
     }
 
     /**
