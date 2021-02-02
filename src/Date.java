@@ -12,7 +12,6 @@ public class Date {
     private int month;
     private int day;
 
-    //Constants created for the months of the year
     final int JANUARY = 1;
     final int FEBRUARY = 2;
     final int MARCH = 3;
@@ -25,6 +24,7 @@ public class Date {
     final int OCTOBER = 10;
     final int NOVEMBER = 11;
     final int DECEMBER = 12;
+    final int YEAR_LOWER_LIMIT = 1900;
 
     /**
      * Constructor for the date
@@ -57,7 +57,7 @@ public class Date {
         Calendar calendar = Calendar.getInstance();
         int currentYear = calendar.get(Calendar.YEAR);
 
-        if ((year < 1900) || (year > currentYear)) {
+        if ((year < YEAR_LOWER_LIMIT) || (year > currentYear)) {
             return false;
         }
         if ((month < JANUARY) || (month > DECEMBER)) {
