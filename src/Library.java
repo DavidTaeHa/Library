@@ -80,7 +80,13 @@ public class Library {
      * @return boolean value for whether or not book was found in the library
      */
     public boolean remove(Book book) {
-
+        int index = find(book);
+        if(index == INVALID){
+            return false;
+        }
+        books[index] = null;
+        //May need to implement method to shift values in array after removal
+        return true;
     }
 
     /** Book is checked out from the library and is no longer available
@@ -89,7 +95,12 @@ public class Library {
      * @return boolean value for whether or not book was found in the library
      */
     public boolean checkOut(Book book) {
-
+        int index = find(book);
+        if(index == INVALID){
+            return false;
+        }
+        books[index].setCheckedOut(true);
+        return true;
     }
 
     /**
@@ -99,7 +110,12 @@ public class Library {
      * @return boolean value for whether or not book was found in the library
      */
     public boolean returns(Book book) {
-        
+        int index = find(book);
+        if(index == INVALID){
+            return false;
+        }
+        books[index].setCheckedOut(false);
+        return true;
     }
 
     /**
