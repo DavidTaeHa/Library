@@ -38,7 +38,7 @@ public class Library {
      */
     private void grow() {
         Book[] temp = new Book[books.length + LIBRARY_INCREMENT_VALUE];
-        for(int i = 0; i < books.length; i++){
+        for (int i = 0; i < books.length; i++) {
             temp[i] = books[i];
         }
         books = temp;
@@ -47,7 +47,7 @@ public class Library {
     /**
      * Helper method used to determine if the bag is full
      */
-    private boolean isFull(){
+    private boolean isFull() {
         for (Book book : books) {
             if (book == null) {
                 return false;
@@ -62,11 +62,11 @@ public class Library {
      * @param book book to be added to library
      */
     public void add(Book book) {
-        if(isFull()){
+        if (isFull()) {
             grow();
         }
-        for(int i = 0; i < books.length; i++){
-            if(books[i] == null){
+        for (int i = 0; i < books.length; i++) {
+            if (books[i] == null) {
                 books[i] = book;
                 numBooks++;
             }
@@ -81,7 +81,7 @@ public class Library {
      */
     public boolean remove(Book book) {
         int index = find(book);
-        if(index == INVALID){
+        if (index == INVALID) {
             return false;
         }
         books[index] = null;
@@ -89,14 +89,15 @@ public class Library {
         return true;
     }
 
-    /** Book is checked out from the library and is no longer available
+    /**
+     * Book is checked out from the library and is no longer available
      *
      * @param book book to be checked out from library
      * @return boolean value for whether or not book was found in the library
      */
     public boolean checkOut(Book book) {
         int index = find(book);
-        if(index == INVALID){
+        if (index == INVALID) {
             return false;
         }
         books[index].setCheckedOut(true);
@@ -111,7 +112,7 @@ public class Library {
      */
     public boolean returns(Book book) {
         int index = find(book);
-        if(index == INVALID){
+        if (index == INVALID) {
             return false;
         }
         books[index].setCheckedOut(false);
@@ -122,7 +123,7 @@ public class Library {
      * Prints list of books in the library
      */
     public void print() {
-        for(Book book: books){
+        for (Book book : books) {
             System.out.println(book);
         }
     }
@@ -131,17 +132,54 @@ public class Library {
      * Print list of books by date published in ascending order
      */
     public void printByDate() {
-        int min;
-        for(int i = 0; i < books.length; i++){
-            for(int j = 0; j < books.length; j++){
-
+        int min = INVALID;
+        for (int i = 0; i < books.length; i++) {
+            for (int j = i; j < books.length; j++) {
+                if (min == INVALID) {
+                    min = j;
+                    continue;
+                }
+                if ((min != INVALID) &&
+                        (books[j].getDatePublished().getYear() < books[min].getDatePublished().getYear())) {
+                    min = j;
+                } else if (books[j].getDatePublished().getYear() == books[min].getDatePublished().getYear()) {
+                    if (books[j].getDatePublished().getMonth() < books[min].getDatePublished().getMonth()) {
+                        min = j;
+                    } else if (books[j].getDatePublished().getMonth() == books[min].getDatePublished().getMonth()) {
+                        if (books[j].getDatePublished().getDay() < books[min].getDatePublished().getDay()) {
+                            min = j;
+                        }
+                    }
+                }
             }
+            Book temp = books[i];
+            books[i] = books[min];
+            books[min] = temp;
+            min = INVALID;
         }
+        print();
     }
 
     /**
      * Print list of books by book number in ascending order
      */
     public void printByNumber() {
+        int min = INVALID;
+        for (int i = 0; i < books.length; i++) {
+            for (int j = i; j < books.length; j++) {
+                if (min == INVALID) {
+                    min = j;
+                }
+                if ((min != INVALID) &&
+                        (Integer.parseInt(books[j].getNumber()) < Integer.parseInt(books[min].getNumber()))) {
+                    min = j;
+                }
+            }
+            Book temp = books[i];
+            books[i] = books[min];
+            books[min] = temp;
+            min = INVALID;
+        }
+        print();
     }
 }

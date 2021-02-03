@@ -35,7 +35,7 @@ public class Book {
     public boolean equals(Object obj) {
         if (obj instanceof Book) {
             Book temp = (Book) obj;
-            return (number == temp.number);
+            return (number.equals(temp.number));
         }
         return false;
     }
@@ -43,8 +43,42 @@ public class Book {
     /**
      * Setter method for checkedOut variable
      */
-    public void setCheckedOut(boolean input){
+    public void setCheckedOut(boolean input) {
         checkedOut = input;
+    }
+
+    /**
+     * Setter method to increment number tracker
+     */
+    public void incrementNumberTrack() {
+        numberTrack++;
+    }
+
+    /**
+     * Getter method for number
+     *
+     * @return value of number
+     */
+    public String getNumber() {
+        return number;
+    }
+
+    /**
+     * Getter method for number tracker
+     *
+     * @return value of numberTrack
+     */
+    public int getNumberTrack() {
+        return numberTrack;
+    }
+
+    /**
+     * Getter Method for date published
+     *
+     * @return value of datePublished
+     */
+    public Date getDatePublished() {
+        return datePublished;
     }
 
     /**
@@ -56,7 +90,7 @@ public class Book {
     @Override
     public String toString() {
         String availability;
-        if (checkedOut == false) {
+        if (!checkedOut) {
             availability = "is available";
         } else {
             availability = "is checked out";

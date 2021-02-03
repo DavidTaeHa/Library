@@ -1,12 +1,12 @@
+
+import java.util.StringTokenizer;
+import java.util.Calendar;
+
 /**
  * This class represents the date based off of the Gregorian Calendar
  *
  * @author David Ha, Andrew McAvoy
  */
-
-import java.util.StringTokenizer;
-import java.util.Calendar;
-
 public class Date {
     private int year;
     private int month;
@@ -29,6 +29,7 @@ public class Date {
     final int THIRTYONE_DAY_MONTH = 31;
     final int FEB_NONLEAPYEAR = 28;
     final int FEB_LEAPYEAR = 29;
+    final int TWO_DIGITS = 10;
     public static final int QUADRENNIAL = 4;
     public static final int CENTENNIAL = 100;
     public static final int QUARTERCENTENNIAL = 400;
@@ -111,6 +112,33 @@ public class Date {
     }
 
     /**
+     * Getter method for year
+     *
+     * @return value of year
+     */
+    public int getYear() {
+        return year;
+    }
+
+    /**
+     * Getter method for month
+     *
+     * @return value of month
+     */
+    public int getMonth() {
+        return month;
+    }
+
+    /**
+     * Getter method for day
+     *
+     * @return value of day
+     */
+    public int getDay() {
+        return day;
+    }
+
+    /**
      * Turns date into a String in the following format mm/dd/yyyy
      *
      * @return date in String form
@@ -118,12 +146,12 @@ public class Date {
     @Override
     public String toString() {
         String dateToString = "";
-        if (month < 10) { //adds zero in front of month if less than 10
+        if (month < TWO_DIGITS) { //adds zero in front of month if less than 10 or two digits
             dateToString += "0" + month + "/";
         } else {
             dateToString += month + "/";
         }
-        if (day < 10) {//adds zero in front of day if less than 10
+        if (day < TWO_DIGITS) {//adds zero in front of day if less than 10 or two digits
             dateToString += "0" + day + "/";
         } else {
             dateToString += day + "/";
