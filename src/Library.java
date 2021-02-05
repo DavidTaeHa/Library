@@ -69,6 +69,7 @@ public class Library {
             if (books[i] == null) {
                 books[i] = book;
                 numBooks++;
+                book.incrementNumberTrack();
             }
         }
     }
