@@ -14,7 +14,7 @@ public class Library {
      * Default constructor for Library class
      */
     public Library() {
-        books = new Book[0];
+        books = new Book[LIBRARY_INCREMENT_VALUE];
         numBooks = 0;
     }
 
@@ -85,7 +85,9 @@ public class Library {
             return false;
         }
         books[index] = null;
-        //May need to implement method to shift values in array after removal
+        for (int i = index; i < (books.length - 1); i++) {
+            books[i] = books[i + 1];
+        }
         return true;
     }
 
