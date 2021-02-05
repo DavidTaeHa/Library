@@ -48,5 +48,6 @@ public class Kiosk {
                     System.out.println("Invalid Command!");
             }
         }
+        System.out.println("Kiosk session ended.");
     }
 }
