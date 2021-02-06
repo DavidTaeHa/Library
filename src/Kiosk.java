@@ -20,13 +20,13 @@ public class Kiosk {
      * Handles all user input and output
      */
     public void run() {
-        String input;
         Library library = new Library();
         Scanner scan = new Scanner(System.in);
-        StringTokenizer tokenizer = new StringTokenizer(input, ",");
         while (kioskSession) {
-            input = scan.next();
+            String input = scan.next();
+            StringTokenizer tokenizer = new StringTokenizer(input, ",");
             String condition = tokenizer.nextToken();
+
             switch(condition){
                 case "PA":
                     //print books with current sequence
