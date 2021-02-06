@@ -42,15 +42,25 @@ public class Book {
 
     /**
      * Setter method for checkedOut variable
+     *
+     * @param input status of book
      */
     public void setCheckedOut(boolean input) {
         checkedOut = input;
     }
 
     /**
+     * Getter method for checkedOut variable
+     * @return value of checkedOut
+     */
+    public boolean isCheckedOut() {
+        return checkedOut;
+    }
+
+    /**
      * Setter method to increment number tracker
      */
-    public void incrementNumberTrack() {
+    public static void incrementNumberTrack() {
         numberTrack++;
     }
 
@@ -68,7 +78,7 @@ public class Book {
      *
      * @return value of numberTrack
      */
-    public int getNumberTrack() {
+    public static int getNumberTrack() {
         return numberTrack;
     }
 

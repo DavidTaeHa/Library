@@ -26,7 +26,7 @@ public class Library {
      */
     private int find(Book book) {
         for (int index = 0; index < books.length; index++) {
-            if (books[index].equals(book)) {
+            if ((books[index] != null) && books[index].equals(book)) {
                 return index;
             }
         }
@@ -70,6 +70,7 @@ public class Library {
                 books[i] = book;
                 numBooks++;
                 book.incrementNumberTrack();
+                break;
             }
         }
     }
@@ -127,7 +128,9 @@ public class Library {
      */
     public void print() {
         for (Book book : books) {
-            System.out.println(book);
+            if(book != null) {
+                System.out.println(book);
+            }
         }
     }
 
@@ -184,5 +187,13 @@ public class Library {
             min = INVALID;
         }
         print();
+    }
+
+    /**
+     * Getter method for number of books
+     * @return number of books
+     */
+    public int getNumBooks() {
+        return numBooks;
     }
 }
