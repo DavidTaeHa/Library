@@ -104,6 +104,9 @@ public class Library {
         if (index == INVALID) {
             return false;
         }
+        if(books[index].getCheckedOut() == true){
+            return false;
+        }
         books[index].setCheckedOut(true);
         return true;
     }
@@ -117,6 +120,9 @@ public class Library {
     public boolean returns(Book book) {
         int index = find(book);
         if (index == INVALID) {
+            return false;
+        }
+        if(books[index].getCheckedOut() == false){
             return false;
         }
         books[index].setCheckedOut(false);
@@ -143,6 +149,9 @@ public class Library {
             for (int j = i; j < books.length; j++) {
                 if (min == INVALID) {
                     min = j;
+                    continue;
+                }
+                if(books[j] == null){
                     continue;
                 }
                 if ((min != INVALID) &&
@@ -175,6 +184,9 @@ public class Library {
             for (int j = i; j < books.length; j++) {
                 if (min == INVALID) {
                     min = j;
+                }
+                if(books[j] == null){
+                    continue;
                 }
                 if ((min != INVALID) &&
                         (Integer.parseInt(books[j].getNumber()) < Integer.parseInt(books[min].getNumber()))) {

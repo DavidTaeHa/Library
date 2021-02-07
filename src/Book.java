@@ -53,7 +53,7 @@ public class Book {
      * Getter method for checkedOut variable
      * @return value of checkedOut
      */
-    public boolean isCheckedOut() {
+    public boolean getCheckedOut() {
         return checkedOut;
     }
 
