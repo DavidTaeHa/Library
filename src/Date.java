@@ -12,6 +12,9 @@ public class Date {
     private int month;
     private int day;
 
+    /**
+     * Constants for isValid method
+     */
     final static int JANUARY = 1;
     final static int FEBRUARY = 2;
     final static int MARCH = 3;
@@ -30,6 +33,10 @@ public class Date {
     final static int FEB_NONLEAPYEAR = 28;
     final static int FEB_LEAPYEAR = 29;
     final static int TWO_DIGITS = 10;
+
+    /**
+     * Constants for the isLeapYear method
+     */
     public static final int QUADRENNIAL = 4;
     public static final int CENTENNIAL = 100;
     public static final int QUARTERCENTENNIAL = 400;
@@ -59,7 +66,7 @@ public class Date {
     /**
      * Checks if the date is valid
      *
-     * @return boolean value for validity of date
+     * @return boolean value True if date if valid False if otherwise
      */
     public boolean isValid() {
         Calendar calendar = Calendar.getInstance();
@@ -96,7 +103,7 @@ public class Date {
      * Checks if given year is a leap year
      *
      * @param year input from isValid method
-     * @return boolean value True if year is a leap year
+     * @return boolean value True if year is a leap year False if otherwise
      */
     private static boolean isLeapYear(int year) {
         if (year % QUADRENNIAL == 0) {
@@ -161,6 +168,8 @@ public class Date {
 
     /**
      * This method is used as testbed method for the Date class
+     *
+     * @param args
      */
     public static void main(String[] args) {
         //Test 1: default constructor

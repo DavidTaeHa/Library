@@ -7,8 +7,8 @@ public class Library {
     private Book[] books; // array-based implementation of the bag data structure
     private int numBooks; // the number of books currently in the bag
 
-    final static int LIBRARY_INCREMENT_VALUE = 4;
-    final static int INVALID = -1;
+    final static int LIBRARY_INCREMENT_VALUE = 4;//increment value for grow method
+    final static int INVALID = -1;//invalid value for find helper method
 
     /**
      * Default constructor for Library class
@@ -79,7 +79,7 @@ public class Library {
      * Removes book from library
      *
      * @param book book to be removed from library
-     * @return boolean value for whether or not book was found in the library
+     * @return boolean value True if book is found and removed False if otherwise
      */
     public boolean remove(Book book) {
         int index = find(book);
@@ -97,7 +97,7 @@ public class Library {
      * Book is checked out from the library and is no longer available
      *
      * @param book book to be checked out from library
-     * @return boolean value for whether or not book was found in the library
+     * @return boolean value True if book was found and checked out False if otherwise
      */
     public boolean checkOut(Book book) {
         int index = find(book);
@@ -115,7 +115,7 @@ public class Library {
      * Book is returned to the library and available again
      *
      * @param book book to be returned to the library
-     * @return boolean value for whether or not book was found in the library
+     * @return boolean value True if book was found and returned and False if otherwise
      */
     public boolean returns(Book book) {
         int index = find(book);

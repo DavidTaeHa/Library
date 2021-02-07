@@ -29,7 +29,7 @@ public class Book {
      * Compares two books to see if they are equal
      *
      * @param obj represents another book to compare
-     * @return boolean value true if the serial numbers for two books are the same
+     * @return boolean value true if the serial numbers for two books are the same false if otherwise
      */
     @Override
     public boolean equals(Object obj) {

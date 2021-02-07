@@ -8,6 +8,9 @@ import java.util.Scanner;
 public class Kiosk {
     private boolean kioskSession;
 
+    /**
+     * Constants used for getting parameters from the array of inputs
+     */
     final static int FIRST_PARAMETER = 0;
     final static int SECOND_PARAMETER = 1;
     final static int THIRD_PARAMETER = 2;
