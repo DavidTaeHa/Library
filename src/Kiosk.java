@@ -17,7 +17,7 @@ public class Kiosk {
     /**
      * Constructor for kiosk class
      */
-    public Kiosk(){
+    public Kiosk() {
         this.kioskSession = true;
     }
 
@@ -33,9 +33,9 @@ public class Kiosk {
             String command = parameters[FIRST_PARAMETER];
             Book target;
             String number;
-            switch(command){
+            switch (command) {
                 case "PA":
-                    if(library.getNumBooks() == 0){
+                    if (library.getNumBooks() == 0) {
                         System.out.println("Library Catalog is Empty!");
                         break;
                     }
@@ -44,7 +44,7 @@ public class Kiosk {
                     System.out.println("**End of list");
                     break;
                 case "PD":
-                    if(library.getNumBooks() == 0){
+                    if (library.getNumBooks() == 0) {
                         System.out.println("Library Catalog is Empty!");
                         break;
                     }
@@ -53,7 +53,7 @@ public class Kiosk {
                     System.out.println("**End of list");
                     break;
                 case "PN":
-                    if(library.getNumBooks() == 0){
+                    if (library.getNumBooks() == 0) {
                         System.out.println("Library Catalog is Empty!");
                         break;
                     }
@@ -62,60 +62,57 @@ public class Kiosk {
                     System.out.println("**End of list");
                     break;
                 case "A":
-                    if(parameters.length != LENGTH_REQUIREMENT_THREE){
+                    if (parameters.length != LENGTH_REQUIREMENT_THREE) {
                         System.out.println("Invalid Command!");
                         break;
                     }
                     String bookName = parameters[SECOND_PARAMETER];
                     String date = parameters[THIRD_PARAMETER];
                     Date newDate = new Date(date);
-                    if(!newDate.isValid()){
+                    if (!newDate.isValid()) {
                         System.out.println("Invalid Date!");
                         break;
                     }
-                    Book newBook = new Book (String.valueOf(Book.getNumberTrack()), bookName, newDate);
+                    Book newBook = new Book(String.valueOf(Book.getNumberTrack()), bookName, newDate);
                     library.add(newBook);
                     System.out.println(bookName + " added to the library.");
                     break;
                 case "R":
-                    if(parameters.length != LENGTH_REQUIREMENT_TWO){
+                    if (parameters.length != LENGTH_REQUIREMENT_TWO) {
                         System.out.println("Invalid Command!");
                         break;
                     }
                     number = parameters[SECOND_PARAMETER];
-                    target = new Book(number,"Target",new Date());
-                    if(!library.remove(target)){
+                    target = new Book(number, "Target", new Date());
+                    if (!library.remove(target)) {
                         System.out.println("Unable to remove, the library does not have this book.");
-                    }
-                    else{
+                    } else {
                         System.out.println("Book# " + number + " removed");
                     }
                     break;
                 case "O":
-                    if(parameters.length != LENGTH_REQUIREMENT_TWO){
+                    if (parameters.length != LENGTH_REQUIREMENT_TWO) {
                         System.out.println("Invalid Command!");
                         break;
                     }
                     number = parameters[SECOND_PARAMETER];
-                    target = new Book(number,"Target",new Date());
-                    if(!library.checkOut(target)){
+                    target = new Book(number, "Target", new Date());
+                    if (!library.checkOut(target)) {
                         System.out.println("Book#" + number + " is not available.");
-                    }
-                    else{
+                    } else {
                         System.out.println("You've checked out Book#" + number + " Enjoy!");
                     }
                     break;
                 case "I":
-                    if(parameters.length != LENGTH_REQUIREMENT_TWO){
+                    if (parameters.length != LENGTH_REQUIREMENT_TWO) {
                         System.out.println("Invalid Command!");
                         break;
                     }
                     number = parameters[SECOND_PARAMETER];
-                    target = new Book(number,"Target",new Date());
-                    if(!library.returns(target)){
+                    target = new Book(number, "Target", new Date());
+                    if (!library.returns(target)) {
                         System.out.println("Unable to return Book#" + number + ".");
-                    }
-                    else{
+                    } else {
                         System.out.println("Book#" + number + " return has completed. Thanks!");
                     }
                     break;

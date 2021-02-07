@@ -169,53 +169,47 @@ public class Date {
 
         //Test 2: valid parameterized date
         Date test2 = new Date("02/03/1984");
-        if(test2.isValid()){
+        if (test2.isValid()) {
             System.out.println("Test 2 passed");
-        }
-        else System.out.println("Test 2 failed");
+        } else System.out.println("Test 2 failed");
 
         //Test 3: year OOB
         Date test3a = new Date("02/03/1899");
         Date test3b = new Date("02/03/2022");
-        if(!test3a.isValid() && !test3b.isValid()){
+        if (!test3a.isValid() && !test3b.isValid()) {
             System.out.println("Test 3 passed");
-        }
-        else System.out.println("Test 3 failed");
+        } else System.out.println("Test 3 failed");
 
         //Test 4: month OOB
         Date test4a = new Date("00/12/2000");
         Date test4b = new Date("13/12/2000");
-        if(!test4a.isValid() && !test4b.isValid()){
+        if (!test4a.isValid() && !test4b.isValid()) {
             System.out.println("Test 4 passed");
-        }
-        else System.out.println("Test 4 failed");
+        } else System.out.println("Test 4 failed");
 
         //Test 5: day OOB
         Date test5a = new Date("01/00/2000");
         Date test5b = new Date("01/32/2000");
-        if(!test5a.isValid() && !test5b.isValid()){
+        if (!test5a.isValid() && !test5b.isValid()) {
             System.out.println("Test 5 passed");
-        }
-        else System.out.println("Test 5 failed");
+        } else System.out.println("Test 5 failed");
 
         //Test 6: test if only correct months can have 31 days
         Date test6a = new Date("01/31/2000");
         Date test6b = new Date("12/31/2000");
         Date test6c = new Date("04/31/2000");
         Date test6d = new Date("09/31/2000");
-        if(test6a.isValid() && test6b.isValid() && !test6c.isValid() && !test6d.isValid()){
+        if (test6a.isValid() && test6b.isValid() && !test6c.isValid() && !test6d.isValid()) {
             System.out.println("Test 6 passed");
-        }
-        else System.out.println("Test 6 failed");
+        } else System.out.println("Test 6 failed");
 
         //Test 7: test leap years
         Date test7a = new Date("02/29/2000");
         Date test7b = new Date("02/29/2020");
         Date test7c = new Date("02/29/2001");
         Date test7d = new Date("02/29/1900");
-        if(test7a.isValid() && test7b.isValid() && !test7c.isValid() && !test7d.isValid()){
+        if (test7a.isValid() && test7b.isValid() && !test7c.isValid() && !test7d.isValid()) {
             System.out.println("Test 7 passed");
-        }
-        else System.out.println("Test 7 failed");
+        } else System.out.println("Test 7 failed");
     }
 }
