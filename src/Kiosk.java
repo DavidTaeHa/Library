@@ -27,6 +27,7 @@ public class Kiosk {
     public void run() {
         Library library = new Library();
         Scanner scan = new Scanner(System.in);
+        System.out.println("Library Kiosk running.");
         while (kioskSession) {
             String input = scan.nextLine();
             String[] parameters = input.split(",");
