@@ -7,8 +7,8 @@ public class Library {
     private Book[] books; // array-based implementation of the bag data structure
     private int numBooks; // the number of books currently in the bag
 
-    final int LIBRARY_INCREMENT_VALUE = 4;
-    final int INVALID = -1;
+    final static int LIBRARY_INCREMENT_VALUE = 4;
+    final static int INVALID = -1;
 
     /**
      * Default constructor for Library class

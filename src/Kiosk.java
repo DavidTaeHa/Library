@@ -8,12 +8,11 @@ import java.util.Scanner;
 public class Kiosk {
     private boolean kioskSession;
 
-    final int FIRST_PARAMETER = 0;
-    final int SECOND_PARAMETER = 1;
-    final int THIRD_PARAMETER = 2;
-    final int LENGTH_REQUIREMENT_THREE = 3;
-    final int LENGTH_REQUIREMENT_TWO = 2;
-    final int INVALID = -1;
+    final static int FIRST_PARAMETER = 0;
+    final static int SECOND_PARAMETER = 1;
+    final static int THIRD_PARAMETER = 2;
+    final static int LENGTH_REQUIREMENT_THREE = 3;
+    final static int LENGTH_REQUIREMENT_TWO = 2;
 
     /**
      * Constructor for kiosk class
