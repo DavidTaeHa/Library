@@ -127,6 +127,7 @@ public class Kiosk {
                     System.out.println("Invalid Command!");
             }
         }
+        scan.close();
         System.out.println("Kiosk session ended.");
     }
 }
