@@ -60,7 +60,7 @@ public class Book {
     /**
      * Setter method to increment number tracker
      */
-    public static void incrementNumberTrack() {
+    public void incrementNumberTrack() {
         numberTrack++;
     }
 

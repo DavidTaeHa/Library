@@ -168,13 +168,14 @@ public class Date {
 
     /**
      * This method is used as testbed method for the Date class
-     *
-     * @param args
+     * 
      */
     public static void main(String[] args) {
         //Test 1: default constructor
         Date test1 = new Date();
-        System.out.println("Test 1 passed if " + test1 + " is today's date");
+        if(test1.isValid()){
+            System.out.println("Test 1 passed");
+        } else System.out.println("Test 1 failed");
 
         //Test 2: valid parameterized date
         Date test2 = new Date("02/03/1984");
