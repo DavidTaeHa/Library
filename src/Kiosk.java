@@ -91,7 +91,7 @@ public class Kiosk {
                     if (!library.remove(target)) {
                         System.out.println("Unable to remove, the library does not have this book.");
                     } else {
-                        System.out.println("Book# " + number + " removed");
+                        System.out.println("Book# " + number + " removed.");
                     }
                     break;
                 case "O":
