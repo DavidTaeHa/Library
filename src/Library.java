@@ -62,9 +62,6 @@ public class Library {
      * @param book book to be added to library
      */
     public void add(Book book) {
-        if (isFull()) {
-            grow();
-        }
         for (int i = 0; i < books.length; i++) {
             if (books[i] == null) {
                 books[i] = book;
@@ -72,6 +69,9 @@ public class Library {
                 book.incrementNumberTrack();
                 break;
             }
+        }
+        if (isFull()) {
+            grow();
         }
     }
 
@@ -89,7 +89,7 @@ public class Library {
         books[index] = null;
         numBooks--;
         for (int i = index; i < (books.length - 1); i++) {
-            books[i] = books[i + 1];
+            Book temp = books[i + 1];
         }
         return true;
     }
